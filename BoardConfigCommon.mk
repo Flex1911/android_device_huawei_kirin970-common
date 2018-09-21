@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-include build/make/target/board/generic_arm64_a/BoardConfig.mk
+include build/make/target/board/generic_arm64_ab/BoardConfig.mk
 
 VENDOR_PATH := device/huawei/kirin970-common
 
