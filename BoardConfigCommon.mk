@@ -45,9 +45,6 @@ endif
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(VENDOR_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 
-# Display
-TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2080000U
-
 # Extended Filesystem Support
 TARGET_EXFAT_DRIVER := exfat
 
@@ -70,9 +67,6 @@ BOARD_PROVIDES_BOOTLOADER_MESSAGE := true
 endif
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/fstab.kirin970
 
-# Release tools
-TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)/releasetools
-
 # SELinux
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/public
@@ -83,6 +77,3 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib64/libdisplayenginesvc_1_1.so|libshims_hwsmartdisplay_jni.so \
     /system/lib64/libhwsmartdisplay_jni.so|libshims_hwsmartdisplay_jni.so \
     /vendor/bin/hw/vendor.huawei.hardware.hisupl@1.0-service|libshims_hisupl.so
-
-# vintf
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(VENDOR_PATH)/framework_manifest.xml

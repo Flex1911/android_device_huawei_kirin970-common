@@ -1,6 +1,3 @@
-# Audio
-/system/etc/usb_audio_policy_configuration.xml    u:object_r:vendor_configs_file:s0
-
 # bfm
 /dev/hw_bfm             u:object_r:bfmr_device:s0
 
@@ -65,10 +62,3 @@
 
 # Splash2
 /splash2(/.*)?                                  u:object_r:splash2_data_file:s0
-
-# USB HAL
-/system/bin/hw/android\.hardware\.usb@1\.0-service\.kirin970       u:object_r:hal_usb_kirin970_exec:s0
-
-# Wi-Fi
-/system/bin/hw/hostapd                                        u:object_r:hal_wifi_hostapd_device_exec:s0
-/system/bin/hw/hostapd_hisi                                   u:object_r:hal_wifi_hostapd_device_exec:s0

@@ -31,16 +31,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 endif
 
-# Audio
-PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml
-
 # Device init scripts
 PRODUCT_PACKAGES += \
-    init.bcm43xx.rc \
-    init.hisi.rc \
     init.kirin970.rc \
-    init.kirin970.ab.rc \
     init.kirin970.environ.rc
 
 # Display
@@ -48,9 +41,6 @@ PRODUCT_PACKAGES += \
     libion
 
 # HIDL
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/compatibility_matrix.xml:system/compatibility_matrix.xml
-
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0
@@ -75,8 +65,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.version.all_codenames=$(PLATFORM_VERSION_ALL_CODENAMES) \
     ro.build.version.codename=$(PLATFORM_VERSION_CODENAME) \
-    ro.build.version.huawei=8.0.0 \
-    ro.build.version.huawei1=8.1.0 \
     ro.build.version.release=$(PLATFORM_VERSION) \
     ro.build.version.sdk=$(PLATFORM_SDK_VERSION) \
     ro.cust.cdrom=/dev/null
@@ -90,39 +78,11 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 endif
 
-# Recovery
-PRODUCT_PACKAGES += \
-    resize2fs_static
-
-# Release tools
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/releasetools/releasetools.kirin970.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/releasetools.kirin970.sh
-
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
-
-# Selinux
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sepolicy/27.0.cil:$(TARGET_COPY_OUT_SYSTEM)/etc/selinux/mapping/27.0.cil
 
 # Shims
 PRODUCT_PACKAGES += \
     libshims_hisupl \
     libshims_hwsmartdisplay_jni
-
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.kirin970
-
-# VNDK
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vndk-compat/ld.config.26.txt:system/etc/ld.config.26.txt \
-    $(LOCAL_PATH)/vndk-compat/llndk.libraries.26.txt:system/etc/llndk.libraries.26.txt \
-    $(LOCAL_PATH)/vndk-compat/vndksp.libraries.26.txt:system/etc/vndksp.libraries.26.txt \
-    $(LOCAL_PATH)/vndk-compat/ld.config.27.txt:system/etc/ld.config.27.txt
-
-# Wi-Fi
-PRODUCT_PACKAGES += \
-    android.hardware.wifi.hostapd@1.0 \
-    android.hardware.wifi@1.2
