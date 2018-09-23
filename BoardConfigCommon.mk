@@ -57,6 +57,7 @@ endif
 # Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3707764736
 BOARD_CACHEIMAGE_PARTITION_SIZE := 16777216
+BOARD_ROOT_EXTRA_FOLDERS := cust eng modem_log sec_storage splash2 version
 
 # Properties
 TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
